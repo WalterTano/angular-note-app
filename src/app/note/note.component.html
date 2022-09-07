@@ -1,0 +1,21 @@
+<div class="col-sm-4 mb-3">
+    <div id="${card.id}" class="card ${card.clase}" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="obtenerId(this.id)">
+      <div class="card-header">
+        <h5 id="${card.id}TargetTitle" class="card-title w-100 text-center">${card.titulo}</h5>
+      </div>
+      <div class="card-body">
+          <p id="${card.id}TargetText" class="card-text">${card.cuerpo}</p>
+          <div class="d-flex justify-content-end">
+              <button type="button" class="btn btn-danger btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modalBorrar">
+                  <i class="text-light"><img src="basura.png" alt="borrar" width="20vw" height="20vh"></i>
+              </button>
+          </div>
+      </div>
+      <div class="card-footer container">
+          <div class="row">
+              <p class="col fw-light" id="${card.id}TargetCity">${card.ciudad} - ${card.temperatura}</p>
+              <p class="col-auto fw-light text-end" id="${card.id}TargetDate">${fechaFormateada}</p>
+          </div>
+      </div>
+    </div>
+</div>
