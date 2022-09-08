@@ -1,27 +1,24 @@
 <div class="modal-header">
-    <h5 class="modal-title w-100 text-center" id="modalAgregarEditarLabel">{{ titulo }}</h5>
+    <h5 class="modal-title w-100 text-center">{{ titulo }}</h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body">
     <div class="form-check form-check-inline" *ngFor="let color of colores">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="{{color}}" value="option1" checked>
-      <label class="form-check-label" for="{{color}}">{{color}}</label>
+      <input class="form-check-input" type="radio" id="radio-{{color.nombre}}" value="{{color.selector}}" (click)="seleccionarColor($event)">
+      <label class="form-check-label" for="radio-{{color.nombre}}">{{color.nombre}}</label>
     </div>
-
-    <input type="text" id="tituloTarjeta" class="my-2 form-control" placeholder="Titulo de la nota.">
-
-    <select class="form-select" id="locality" name="locality" placeholder="Ciudad">
-      <option *ngFor="let ciudad of ciudades" value="{{ciudad}}">{{ciudad}}</option>
+    <input type="text" class="my-2 form-control" placeholder="Titulo de la nota." [(ngModel)]="nota.titulo">
+    <select class="form-select" placeholder="Ciudad">
+      <option *ngFor="let ciudad of ciudades" value="{{ciudad.ubicacion.lat}};{{ciudad.ubicacion.long}}" (click)="seleccionarCiudad($event)">{{ciudad.nombre}}</option>
     </select>
-
     <div class="input-group">
         <div class="input-group">
-            <label class="input-group-text my-2" for="fechaTarjetaLabel">Fecha y hora</label>
-            <input class="my-2 form-control" type="datetime-local" id="fechaTarjetaEditar">
+            <label class="input-group-text my-2" for="fechaTarjetaEditar">Fecha y hora</label>
+            <input class="my-2 form-control" type="datetime-local" id="fechaTarjetaEditar" [(ngModel)]="nota.fechaFormateada">
         </div>
     </div>
-    <textarea id="textoAgregarEditar" class="form-control textoModal" placeholder="Escriba su nota."></textarea>
+    <textarea class="form-control textoModal mb-2" placeholder="Escriba su nota." [(ngModel)]="nota.cuerpo"></textarea>
 </div>
 <div class="modal-footer justify-content-center">
-    <button  id="botonAgregarEditarModal" type="button" class="btn btn-primary" data-bs-dismiss="modal">{{ textoBoton }}</button>
+    <button type="button" class="btn btn-primary" (click)="crearNota()">{{ textoBoton }}</button>
 </div>
