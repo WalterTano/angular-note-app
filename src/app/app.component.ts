@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Note } from './Note';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'note-app';
+  nota = {id: '524398', clase: 'Cielo', titulo: 'asdasd', ciudad: '-11;100', cuerpo: 'asdasdasd'};
+
+  mostrar($event: Note) {
+    console.log($event);
+  }
 }

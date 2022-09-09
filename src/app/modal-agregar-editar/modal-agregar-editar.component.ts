@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 import { Ciudad } from '../Ciudad';
 import { Color } from '../Color';
-import { EmptyNote } from '../Note';
+import { Note, EmptyNote } from '../Note';
 
 @Component({
   selector: 'app-modal-agregar-editar',
@@ -10,40 +10,41 @@ import { EmptyNote } from '../Note';
   styleUrls: ['./modal-agregar-editar.component.sass']
 })
 export class ModalAgregarEditarComponent implements OnInit {
-  modo: 'Agregar' | 'Editar' = 'Agregar';
+  @Output() notaEmitida: EventEmitter<Note> = new EventEmitter<Note>();
+  @Input() notaEntrada?: any;
+
+  nota: EmptyNote = new EmptyNote();
   titulo: string = 'Agregar Nota';
   textoBoton: string = 'Agregar';
+
+  // Datos mockeados
   ciudades: Ciudad[] = [
-    { nombre: 'Buenos Aires', ubicacion: { lat: '', long: '' } },
-    { nombre: 'Montevideo', ubicacion: { lat: '', long: '' } },
-    { nombre: 'Paris', ubicacion: { lat: '', long: '' } },
-    { nombre: 'Tokyo', ubicacion: { lat: '', long: '' } }
+    { nombre: 'Buenos Aires', ubicacion: { lat: '123', long: '245' } },
+    { nombre: 'Montevideo', ubicacion: { lat: '-11', long: '100' } },
+    { nombre: 'Paris', ubicacion: { lat: '-115', long: '0' } },
+    { nombre: 'Tokyo', ubicacion: { lat: '53', long: '-170' } }
   ];
   colores: Color[] = [
     { nombre: 'Verde', selector: 'Verde' },
     { nombre: 'Amarillo', selector: 'Amarillo' },
     { nombre: 'Cielo', selector: 'Cielo' }
   ];
-  nota: EmptyNote = new EmptyNote();
+  // ----------------
 
   constructor() { }
 
   ngOnInit(): void {
-    if (this.modo === 'Editar') {
+    if (this.notaEntrada === 'Editar') {
       this.titulo = 'Editar Nota';
       this.textoBoton = 'Editar';
+      this.nota = this.notaEntrada;
     }
   }
 
-  seleccionarColor($event: Event) {
-    this.nota.clase = ($event.target as HTMLInputElement).value;
-  }
-
-  seleccionarCiudad($event: Event) {
-    this.nota.ciudad = ($event.target as HTMLInputElement).value;
-  }
-
-  crearNota() {
-    console.log(this.nota);
+  guardarNota() {
+    if (!this.nota.id) {
+      this.nota.id = `${Math.floor(Math.random() * 1000000)}`;
+    }
+    this.notaEmitida.emit(this.nota);
   }
 }
