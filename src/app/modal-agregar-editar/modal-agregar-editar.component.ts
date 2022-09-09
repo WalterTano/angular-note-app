@@ -19,10 +19,10 @@ export class ModalAgregarEditarComponent implements OnInit {
 
   // Datos mockeados
   ciudades: Ciudad[] = [
-    { nombre: 'Buenos Aires', ubicacion: { lat: '123', long: '245' } },
-    { nombre: 'Montevideo', ubicacion: { lat: '-11', long: '100' } },
-    { nombre: 'Paris', ubicacion: { lat: '-115', long: '0' } },
-    { nombre: 'Tokyo', ubicacion: { lat: '53', long: '-170' } }
+    { nombre: 'Buenos Aires', lat: '123', long: '245' },
+    { nombre: 'Montevideo', lat: '-11', long: '100' },
+    { nombre: 'Paris', lat: '-115', long: '0' },
+    { nombre: 'Tokyo', lat: '53', long: '-170' }
   ];
   colores: Color[] = [
     { nombre: 'Verde', selector: 'Verde' },

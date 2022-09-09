@@ -12,7 +12,7 @@
     <input type="text" class="my-2 form-control" placeholder="Titulo de la nota." [(ngModel)]="nota.titulo">
     <!-- Ciudad -->
     <select class="form-select" placeholder="Ciudad" [(ngModel)]="nota.ciudad">
-      <option *ngFor="let ciudad of ciudades" value="{{ciudad.ubicacion.lat}};{{ciudad.ubicacion.long}}">{{ciudad.nombre}}</option>
+      <option *ngFor="let ciudad of ciudades" value="{{ciudad.lat}};{{ciudad.long}}">{{ciudad.nombre}}</option>
     </select>
     <!-- Fecha y hora -->
     <div class="input-group">
