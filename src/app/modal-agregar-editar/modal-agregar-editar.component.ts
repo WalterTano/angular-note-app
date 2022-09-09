@@ -34,10 +34,10 @@ export class ModalAgregarEditarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if (this.notaEntrada === 'Editar') {
+    if (this.notaEntrada) {
       this.titulo = 'Editar Nota';
       this.textoBoton = 'Editar';
-      this.nota = this.notaEntrada;
+      this.nota = { ...this.notaEntrada };
     }
   }
 

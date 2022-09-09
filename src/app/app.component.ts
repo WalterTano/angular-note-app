@@ -12,5 +12,6 @@ export class AppComponent {
 
   mostrar($event: Note) {
     console.log($event);
+    console.log(this.nota);
   }
 }
