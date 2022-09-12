@@ -1,3 +1,4 @@
+import { TemperatureService } from './temperature.service';
 import { Note } from './Note';
 import { Injectable } from '@angular/core';
 
@@ -7,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class NotasService {
   notas?: Map<string, Note>;
 
-  constructor() {
+  constructor(private servicioTemperatura: TemperatureService) {
     this.notas = new Map<string, Note>();
   }
 
