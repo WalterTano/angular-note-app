@@ -6,11 +6,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ModalAgregarEditarComponent } from './modal-agregar-editar/modal-agregar-editar.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FooterComponent } from './footer/footer.component';
+import { NoteComponent } from './note/note.component';
+import { GrillaComponent } from './grilla/grilla.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModalAgregarEditarComponent
+    ModalAgregarEditarComponent,
+    NavBarComponent,
+    FooterComponent,
+    NoteComponent,
+    GrillaComponent
   ],
   imports: [
     BrowserModule,
