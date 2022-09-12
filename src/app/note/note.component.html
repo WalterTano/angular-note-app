@@ -1,5 +1,5 @@
 <div *ngIf="note">
-    <div id="{{note.id}}" class="card {{note.clase}}" (click)="obtenerId(note.id)">
+    <div id="{{note.id}}" class="card {{note.clase}}" (click)="abrirModalEditar()">
         <div class="card-header">
             <h5 id="{{note.id}}TargetTitle" class="card-title w-100 text-center">{{note.titulo}}</h5>
         </div>
