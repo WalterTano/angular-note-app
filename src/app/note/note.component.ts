@@ -7,6 +7,7 @@ import { Note } from '../Note';
   styleUrls: ['./note.component.sass']
 })
 export class NoteComponent implements OnInit {
+  
   note: Note = {
     id: "id",
     clase: "clase",
