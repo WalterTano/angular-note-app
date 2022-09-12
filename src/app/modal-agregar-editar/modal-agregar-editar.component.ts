@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { NotasService } from './../notas.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Ciudad } from '../Ciudad';
@@ -11,7 +12,6 @@ import { Note, EmptyNote } from '../Note';
   styleUrls: ['./modal-agregar-editar.component.sass']
 })
 export class ModalAgregarEditarComponent implements OnInit {
-  @Output() notaEmitida: EventEmitter<Note> = new EventEmitter<Note>();
   @Input() notaEntrada?: Note;
 
   nota: EmptyNote = new EmptyNote();
@@ -32,7 +32,7 @@ export class ModalAgregarEditarComponent implements OnInit {
   ];
   // ----------------
 
-  constructor(public modalActivo: NgbActiveModal) { }
+  constructor(public modalActivo: NgbActiveModal, private servicioNotas: NotasService) { }
 
   ngOnInit(): void {
     if (this.notaEntrada) {
@@ -45,8 +45,10 @@ export class ModalAgregarEditarComponent implements OnInit {
   guardarNota() {
     if (!this.nota.id) {
       this.nota.id = `${Math.floor(Math.random() * 1000000)}`;
+      this.servicioNotas.crearNota(this.nota);
+    } else {
+      this.servicioNotas.editarNota(this.nota);
     }
-    // TODO: Guardar nota
     this.modalActivo.close();
   }
 }
