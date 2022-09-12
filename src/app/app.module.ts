@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NoteComponent } from './note/note.component';
 import { GrillaComponent } from './grilla/grilla.component';
 import { BotonAgregarComponent } from './boton-agregar/boton-agregar.component';
+import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BotonAgregarComponent } from './boton-agregar/boton-agregar.component';
     FooterComponent,
     NoteComponent,
     GrillaComponent,
-    BotonAgregarComponent
+    BotonAgregarComponent,
+    ModalEliminarComponent
   ],
   imports: [
     BrowserModule,

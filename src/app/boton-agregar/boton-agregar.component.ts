@@ -10,7 +10,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class BotonAgregarComponent implements OnInit {
 
 
-  constructor(public modalService: NgbModal) { }
+  constructor(private modalService: NgbModal) { }
   
   agregarNota() {
     this.modalService.open(ModalAgregarEditarComponent);
