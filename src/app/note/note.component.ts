@@ -15,7 +15,7 @@ export class NoteComponent implements OnInit {
   }
 
   obtenerId(id: string){
-    alert(id);
+    
   }
 
 }
