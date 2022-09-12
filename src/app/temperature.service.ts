@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Ciudad } from './Ciudad';
+import { TEMPERATURAS } from './mock-temperaturas';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,8 @@ export class TemperatureService {
 
   constructor() { }
 
+
+  /*
   async getClima(date:Date, ciudad:Ciudad){
     try {
       let fecha = date.toISOString().split('T')[0];
@@ -18,5 +21,7 @@ export class TemperatureService {
     } catch (e) {
       return undefined;
     }
+    
   }
+  */
 }
