@@ -20,15 +20,16 @@ export class ModalAgregarEditarComponent implements OnInit {
 
   // Datos mockeados
   ciudades: Ciudad[] = [
-    { nombre: 'Buenos Aires', lat: '123', long: '245' },
-    { nombre: 'Montevideo', lat: '-11', long: '100' },
-    { nombre: 'Paris', lat: '-115', long: '0' },
-    { nombre: 'Tokyo', lat: '53', long: '-170' }
+    { nombre: 'Buenos Aires', lat: '-34,6118', long: '-58,4173' },
+    { nombre: 'Montevideo', lat: '-34,8941', long: '-56,0675' },
+    { nombre: 'Paris', lat: '48,8567', long: '2,3510' },
+    { nombre: 'Tokyo', lat: '35,6785', long: '139,6823' }
   ];
   colores: Color[] = [
-    { nombre: 'Verde', selector: 'Verde' },
-    { nombre: 'Amarillo', selector: 'Amarillo' },
-    { nombre: 'Cielo', selector: 'Cielo' }
+    { nombre: 'Rojo', selector: 'btnRed' },
+    { nombre: 'Verde', selector: 'btnGreen' },
+    { nombre: 'Amarillo', selector: 'btnYellow' },
+    { nombre: 'Cielo', selector: 'btnSky' }
   ];
   // ----------------
 
@@ -44,7 +45,6 @@ export class ModalAgregarEditarComponent implements OnInit {
 
   guardarNota() {
     if (!this.nota.id) {
-      this.nota.id = `${Math.floor(Math.random() * 1000000)}`;
       this.servicioNotas.crearNota(this.nota);
     } else {
       this.servicioNotas.editarNota(this.nota);
