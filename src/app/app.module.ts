@@ -11,6 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NoteComponent } from './note/note.component';
 import { GrillaComponent } from './grilla/grilla.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,7 @@ import { GrillaComponent } from './grilla/grilla.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
     FormsModule
