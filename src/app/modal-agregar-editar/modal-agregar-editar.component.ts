@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { NotasService } from './../notas.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Ciudad } from '../Ciudad';
@@ -11,7 +12,6 @@ import { Note, EmptyNote } from '../Note';
   styleUrls: ['./modal-agregar-editar.component.sass']
 })
 export class ModalAgregarEditarComponent implements OnInit {
-  @Output() notaEmitida: EventEmitter<Note> = new EventEmitter<Note>();
   @Input() notaEntrada?: Note;
 
   nota: EmptyNote = new EmptyNote();
@@ -20,19 +20,20 @@ export class ModalAgregarEditarComponent implements OnInit {
 
   // Datos mockeados
   ciudades: Ciudad[] = [
-    { nombre: 'Buenos Aires', lat: '123', long: '245' },
-    { nombre: 'Montevideo', lat: '-11', long: '100' },
-    { nombre: 'Paris', lat: '-115', long: '0' },
-    { nombre: 'Tokyo', lat: '53', long: '-170' }
+    { nombre: 'Buenos Aires', lat: '-34,6118', long: '-58,4173' },
+    { nombre: 'Montevideo', lat: '-34,8941', long: '-56,0675' },
+    { nombre: 'Paris', lat: '48,8567', long: '2,3510' },
+    { nombre: 'Tokyo', lat: '35,6785', long: '139,6823' }
   ];
   colores: Color[] = [
-    { nombre: 'Verde', selector: 'Verde' },
-    { nombre: 'Amarillo', selector: 'Amarillo' },
-    { nombre: 'Cielo', selector: 'Cielo' }
+    { nombre: 'Rojo', selector: 'btnRed' },
+    { nombre: 'Verde', selector: 'btnGreen' },
+    { nombre: 'Amarillo', selector: 'btnYellow' },
+    { nombre: 'Cielo', selector: 'btnSky' }
   ];
   // ----------------
 
-  constructor(public modalActivo: NgbActiveModal) { }
+  constructor(public modalActivo: NgbActiveModal, private servicioNotas: NotasService) { }
 
   ngOnInit(): void {
     if (this.notaEntrada) {
@@ -44,9 +45,10 @@ export class ModalAgregarEditarComponent implements OnInit {
 
   guardarNota() {
     if (!this.nota.id) {
-      this.nota.id = `${Math.floor(Math.random() * 1000000)}`;
+      this.servicioNotas.crearNota(this.nota);
+    } else {
+      this.servicioNotas.editarNota(this.nota);
     }
-    // TODO: Guardar nota
     this.modalActivo.close();
   }
 }
