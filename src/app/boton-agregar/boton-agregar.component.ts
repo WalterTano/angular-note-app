@@ -11,7 +11,6 @@ export class BotonAgregarComponent implements OnInit {
 
 
   constructor(public modalService: NgbModal) { }
-  
   agregarNota() {
     this.modalService.open(ModalAgregarEditarComponent);
   }
