@@ -10,6 +10,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { NoteComponent } from './note/note.component';
 import { GrillaComponent } from './grilla/grilla.component';
+import { BotonAgregarComponent } from './boton-agregar/boton-agregar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { GrillaComponent } from './grilla/grilla.component';
     NavBarComponent,
     FooterComponent,
     NoteComponent,
-    GrillaComponent
+    GrillaComponent,
+    BotonAgregarComponent
   ],
   imports: [
     BrowserModule,
