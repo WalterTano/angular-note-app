@@ -1,4 +1,5 @@
 <div class="container">
-    <div class="row" id="tarjetas"></div>
-    <app-note></app-note>
+    <div class="row" id="tarjetas">
+            <app-note class="col-sm-4 mb-3" *ngFor="let nota in notas" [note]="nota"></app-note>
+    </div>
 </div>
