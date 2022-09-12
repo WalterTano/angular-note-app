@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Ciudad } from '../Ciudad';
 import { Color } from '../Color';
@@ -11,7 +12,7 @@ import { Note, EmptyNote } from '../Note';
 })
 export class ModalAgregarEditarComponent implements OnInit {
   @Output() notaEmitida: EventEmitter<Note> = new EventEmitter<Note>();
-  @Input() notaEntrada?: any;
+  @Input() notaEntrada?: Note;
 
   nota: EmptyNote = new EmptyNote();
   titulo: string = 'Agregar Nota';
@@ -31,7 +32,7 @@ export class ModalAgregarEditarComponent implements OnInit {
   ];
   // ----------------
 
-  constructor() { }
+  constructor(public modalActivo: NgbActiveModal) { }
 
   ngOnInit(): void {
     if (this.notaEntrada) {
@@ -45,6 +46,7 @@ export class ModalAgregarEditarComponent implements OnInit {
     if (!this.nota.id) {
       this.nota.id = `${Math.floor(Math.random() * 1000000)}`;
     }
-    this.notaEmitida.emit(this.nota);
+    // TODO: Guardar nota
+    this.modalActivo.close();
   }
 }
