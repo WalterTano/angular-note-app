@@ -26,6 +26,7 @@ export class NotasService {
 
   crearNota(nota: Note) {
     if (this.notas) {
+      nota.id = `${Math.floor(Math.random() * 1000000)}`;
       this.notas.set(nota.id, nota);
     }
   }
