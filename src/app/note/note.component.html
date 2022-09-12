@@ -1,5 +1,5 @@
-<div class="col-sm-4 mb-3">
-    <div #selectedCard id="{{note.id}}" class="card {{note.clase}}" data-bs-toggle="modal" data-bs-target="#modalEditar" (click)="obtenerId(selectedCard.id)">
+<div *ngIf="note">
+    <div id="{{note.id}}" class="card {{note.clase}}" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="obtenerId(this.id)">
         <div class="card-header">
             <h5 id="{{note.id}}TargetTitle" class="card-title w-100 text-center">{{note.titulo}}</h5>
         </div>
