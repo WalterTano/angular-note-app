@@ -14,4 +14,8 @@ export class NoteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  obtenerId(id: string){
+    alert(id);
+  }
+
 }
