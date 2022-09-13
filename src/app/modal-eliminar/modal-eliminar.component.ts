@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NotasService } from '../notas.service';
 
 
 @Component({
@@ -9,10 +10,16 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalEliminarComponent implements OnInit {
 
-  constructor(public modalActivo: NgbActiveModal) { }
+  @Input() noteId?: string;
+  constructor(public modalActivo: NgbActiveModal, private noteService: NotasService) { }
 
   ngOnInit(): void {
   }
+
+  delete() {
+    this.noteService.eliminarNota(this.noteId);
+  }
+  
 
 
 }

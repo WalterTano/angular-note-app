@@ -29,6 +29,15 @@ export class NotasService {
     if (this.notas) {
       nota.id = `${Math.floor(Math.random() * 1000000)}`;
       this.notas.set(nota.id, nota);
+      let ciudad = {
+        nombre: nota.ciudad,
+        lat: '1',
+        long: '1'
+      }
+      this.servicioTemperatura.getWeather(new Date(nota.fechaFormateada), ciudad)
+      .subscribe(resultado => {
+        nota.temperatura = resultado ? resultado : '';
+      });
     }
   }
 

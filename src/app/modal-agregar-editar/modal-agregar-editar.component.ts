@@ -23,7 +23,8 @@ export class ModalAgregarEditarComponent implements OnInit {
     { nombre: 'Buenos Aires', lat: '-34,6118', long: '-58,4173' },
     { nombre: 'Montevideo', lat: '-34,8941', long: '-56,0675' },
     { nombre: 'Paris', lat: '48,8567', long: '2,3510' },
-    { nombre: 'Tokyo', lat: '35,6785', long: '139,6823' }
+    { nombre: 'Tokyo', lat: '35,6785', long: '139,6823' },
+    { nombre: 'New York', lat: '41,6785', long: '-139,6823' }
   ];
   colores: Color[] = [
     { nombre: 'Rojo', selector: 'btnRed' },
