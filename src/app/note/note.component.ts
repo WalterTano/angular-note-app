@@ -3,6 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Note } from '../Note';
+import { ModalEliminarComponent } from '../modal-eliminar/modal-eliminar.component';
 
 @Component({
   selector: 'app-note',
@@ -20,5 +21,10 @@ export class NoteComponent implements OnInit {
   abrirModalEditar() {
     const modal = this.modalService.open(ModalAgregarEditarComponent);
     (modal.componentInstance as ModalAgregarEditarComponent).notaEntrada = this.note;
+  }
+
+  openModalDelete() {
+    const modal = this.modalService.open(ModalEliminarComponent);
+    (modal.componentInstance as ModalEliminarComponent).noteId = this.note?.id;
   }
 }

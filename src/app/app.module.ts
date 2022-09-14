@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NoteComponent } from './note/note.component';
 import { GrillaComponent } from './grilla/grilla.component';
 import { BotonAgregarComponent } from './boton-agregar/boton-agregar.component';
+import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     NoteComponent,
     GrillaComponent,
-    BotonAgregarComponent
+    BotonAgregarComponent,
+    ModalEliminarComponent
   ],
   imports: [
     BrowserModule,
