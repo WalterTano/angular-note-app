@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalAgregarEditarComponent } from './modal-agregar-editar/modal-agregar-editar.component';
-import { Note } from './Note';
+import { AddEditNoteModalComponent } from './components/add-edit-note-modal/add-edit-note-modal.component';
+import { Note } from './interfaces/Note';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +20,7 @@ export class AppComponent {
   constructor(private modalService: NgbModal) {}
 
   open() {
-    const modalRef = this.modalService.open(ModalAgregarEditarComponent);
+    const modalRef = this.modalService.open(AddEditNoteModalComponent);
     modalRef.componentInstance.notaEntrada = this.nota;
   }
 }

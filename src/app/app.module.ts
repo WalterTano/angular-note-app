@@ -5,26 +5,26 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ModalAgregarEditarComponent } from './modal-agregar-editar/modal-agregar-editar.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { FooterComponent } from './footer/footer.component';
-import { NoteComponent } from './note/note.component';
-import { GrillaComponent } from './grilla/grilla.component';
-import { BotonAgregarComponent } from './boton-agregar/boton-agregar.component';
-import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.component';
+import { AddEditNoteModalComponent } from './components/add-edit-note-modal/add-edit-note-modal.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NoteComponent } from './components/note/note.component';
+import { NoteGridComponent } from './components/note-grid/note-grid.component';
+import { AddNoteButtonComponent } from './components/add-note-button/add-note-button.component';
+import { DeleteNoteModalComponent } from './components/delete-note-modal/delete-note-modal.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModalAgregarEditarComponent,
+    AddEditNoteModalComponent,
     NavBarComponent,
     FooterComponent,
     NoteComponent,
-    GrillaComponent,
-    BotonAgregarComponent,
-    ModalEliminarComponent
+    NoteGridComponent,
+    AddNoteButtonComponent,
+    DeleteNoteModalComponent
   ],
   imports: [
     BrowserModule,

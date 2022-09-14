@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
-import { Observable, throwError, of } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { Ciudad } from './Ciudad';
+import { HttpClient } from '@angular/common/http';
+
+import { Observable, of } from 'rxjs';
+
+import { Ciudad } from '../interfaces/Ciudad';
 import { TEMPERATURAS } from './mock-temperaturas';
 
 
@@ -20,8 +21,7 @@ export class TemperatureService {
   */
 
   getWeather(date:Date, ciudad:Ciudad): Observable<string | undefined>{
-    let data = TEMPERATURAS.get(ciudad.nombre);
-    return of(data);
+    return of(TEMPERATURAS.get(ciudad.nombre));
   }
 
 }

@@ -1,5 +1,5 @@
 import { TemperatureService } from './temperature.service';
-import { Note } from './Note';
+import { Note } from '../interfaces/Note';
 import { Injectable } from '@angular/core';
 
 @Injectable({
