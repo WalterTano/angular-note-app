@@ -1,6 +1,6 @@
 import { AddEditNoteModalComponent } from '../add-edit-note-modal/add-edit-note-modal.component';
 import { Component, OnInit, Input } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Note } from '../../interfaces/Note';
 import { DeleteNoteModalComponent } from '../delete-note-modal/delete-note-modal.component';

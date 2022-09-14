@@ -14,6 +14,7 @@ import { AddNoteButtonComponent } from './components/add-note-button/add-note-bu
 import { DeleteNoteModalComponent } from './components/delete-note-modal/delete-note-modal.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FixedBottomContentComponent } from './fixed-bottom-content/fixed-bottom-content.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     NoteComponent,
     NoteGridComponent,
     AddNoteButtonComponent,
-    DeleteNoteModalComponent
+    DeleteNoteModalComponent,
+    FixedBottomContentComponent
   ],
   imports: [
     BrowserModule,
