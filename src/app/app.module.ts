@@ -12,9 +12,10 @@ import { NoteComponent } from './components/note/note.component';
 import { NoteGridComponent } from './components/note-grid/note-grid.component';
 import { AddNoteButtonComponent } from './components/add-note-button/add-note-button.component';
 import { DeleteNoteModalComponent } from './components/delete-note-modal/delete-note-modal.component';
+import { FixedBottomContentComponent } from './components/fixed-bottom-content/fixed-bottom-content.component';
+import { DarkModeToggleComponent } from './components/dark-mode-toggle/dark-mode-toggle.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FixedBottomContentComponent } from './fixed-bottom-content/fixed-bottom-content.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FixedBottomContentComponent } from './fixed-bottom-content/fixed-bottom
     NoteGridComponent,
     AddNoteButtonComponent,
     DeleteNoteModalComponent,
-    FixedBottomContentComponent
+    FixedBottomContentComponent,
+    DarkModeToggleComponent
   ],
   imports: [
     BrowserModule,

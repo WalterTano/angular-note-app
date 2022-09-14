@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AddNoteButtonComponent } from '../add-note-button/add-note-button.component';
 
 @Component({
   selector: 'app-fixed-bottom-content',

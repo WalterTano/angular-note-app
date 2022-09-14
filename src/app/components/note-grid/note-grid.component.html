@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="row" id="tarjetas">
-        <div class="col-sm-4 mb-3" *ngFor="let note of notes | keyvalue">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-xl-3 mb-3" *ngFor="let note of notes | keyvalue">
             <app-note [note]="note.value"></app-note>
         </div>
     </div>

@@ -11,8 +11,7 @@ import { DeleteNoteModalComponent } from '../delete-note-modal/delete-note-modal
   styleUrls: ['./note.component.sass']
 })
 export class NoteComponent implements OnInit {
-
-  @Input() note?: Note;
+  @Input() note!: Note;
   constructor(public modalService: NgbModal) { }
 
   ngOnInit(): void {
