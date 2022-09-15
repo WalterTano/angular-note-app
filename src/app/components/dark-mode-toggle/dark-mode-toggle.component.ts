@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DarkModeService } from 'src/app/services/dark-mode.service';
 
 @Component({
   selector: 'app-dark-mode-toggle',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DarkModeToggleComponent implements OnInit {
 
-  constructor() { }
+  constructor(public darkModeService: DarkModeService) { }
 
   ngOnInit(): void {
   }
 
+  toggleDarkMode($event: Event) {
+    this.darkModeService.isDarkMode = ($event.target as HTMLInputElement).checked;
+  }
 }

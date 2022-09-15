@@ -1,20 +1,20 @@
 <div *ngIf="note">
-    <div id="{{note.id}}" class="card {{note.clase}}" (click)="abrirModalEditar()">
-        <div class="card-header">
+    <div id="{{note.id}}" class="card" (click)="openEditModal()">
+        <div class="card-header bg-{{darkModeService.colorScheme}}">
             <h5 id="{{note.id}}TargetTitle" class="card-title w-100 text-center">{{note.titulo}}</h5>
         </div>
         <div class="card-body">
             <p id="{{note.id}}TargetText" class="card-text">{{note.cuerpo}}</p>
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-danger btn-outline-dark">
-                    <i class="text-light"><img src="./assets/basura.png" alt="borrar" width="20vw" height="20vh"></i>
+                <button type="button" class="btn btn-danger btn-outline-dark" (click)="openDeleteModal($event)">
+                    <i class="text-{{darkModeService.colorScheme}}"><img src="./assets/basura.png" alt="eliminar" width="20vw" height="20vh"></i>
                 </button>
             </div>
         </div>
         <div class="card-footer container-md">
             <div class="row">
-                <p class="col fw-light" id="{{note.id}}TargetCity">{{note.ciudad}} - {{note.temperatura}}</p>
-                <p class="col-auto fw-light text-end" id="{{note.id}}TargetDate">{{note.fechaFormateada}}</p>
+                <p class="col fw-{{darkModeService.colorScheme}}" id="{{note.id}}TargetCity">{{note.ciudad}} - {{note.temperatura}}</p>
+                <p class="col-auto fw-{{darkModeService.colorScheme}} text-end" id="{{note.id}}TargetDate">{{note.fechaFormateada}}</p>
             </div>
         </div>
     </div>

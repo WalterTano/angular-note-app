@@ -1,11 +1,11 @@
-<div class="modal-header">
+<div class="modal-header {{darkModeService.colorScheme}}">
     <h5 class="modal-title w-100 text-center">Eliminar Nota</h5>
     <button type="button" class="btn-close" (click)="dismiss()"></button>
 </div>
-<div class="modal-body">
+<div class="modal-body {{darkModeService.colorScheme}}">
     <p class="w-100 text-center">¿Desea eliminar la nota?</p>
 </div>
-<div class="modal-footer justify-content-center">
+<div class="modal-footer justify-content-center {{darkModeService.colorScheme}}">
+    <button type="button" class="btn {{colorScheme}}" (click)="dismiss()">No</button>
     <button type="button" class="btn btn-danger" (click)="delete()">Sí</button>
-    <button type="button" class="btn" (click)="dismiss()">No</button>
 </div>

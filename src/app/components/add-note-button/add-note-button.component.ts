@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DarkModeService } from 'src/app/services/dark-mode.service';
 
 import { AddEditNoteModalComponent } from '../add-edit-note-modal/add-edit-note-modal.component';
 
@@ -10,12 +11,17 @@ import { AddEditNoteModalComponent } from '../add-edit-note-modal/add-edit-note-
 })
 export class AddNoteButtonComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  get buttonColorScheme(): 'primary' | 'secondary' {
+    return this.darkModeService.isDarkMode ? 'secondary' : 'primary';
+  }
+
+  constructor(private modalService: NgbModal,
+              private darkModeService: DarkModeService) { }
+
+  ngOnInit(): void {
+  }
 
   openAddNoteModal() {
     this.modalService.open(AddEditNoteModalComponent);
-  }
-
-  ngOnInit(): void {
   }
 }

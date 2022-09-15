@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Note } from '../../interfaces/Note';
 import { DeleteNoteModalComponent } from '../delete-note-modal/delete-note-modal.component';
+import { DarkModeService } from 'src/app/services/dark-mode.service';
 
 @Component({
   selector: 'app-note',
@@ -12,18 +13,20 @@ import { DeleteNoteModalComponent } from '../delete-note-modal/delete-note-modal
 })
 export class NoteComponent implements OnInit {
   @Input() note!: Note;
-  constructor(public modalService: NgbModal) { }
+  constructor(public modalService: NgbModal,
+              public darkModeService: DarkModeService) { }
 
   ngOnInit(): void {
   }
 
-  abrirModalEditar() {
+  openEditModal() {
     const modal = this.modalService.open(AddEditNoteModalComponent);
     (modal.componentInstance as AddEditNoteModalComponent).inputNote = this.note;
   }
 
-  openModalDelete() {
+  openDeleteModal($event: Event) {
+    $event.stopPropagation();
     const modal = this.modalService.open(DeleteNoteModalComponent);
-    (modal.componentInstance as DeleteNoteModalComponent).noteId = this.note?.id;
+    (modal.componentInstance as DeleteNoteModalComponent).noteId = this.note.id;
   }
 }

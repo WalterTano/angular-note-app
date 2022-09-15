@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NotasService } from '../../services/notas.service';
+import { NotesService } from '../../services/notes.service';
 import { Note } from '../../interfaces/Note';
 
 @Component({
@@ -11,7 +11,7 @@ import { Note } from '../../interfaces/Note';
 export class NoteGridComponent implements OnInit {
   notes: Map<string, Note>;
 
-  constructor(private notesService: NotasService) {
+  constructor(private notesService: NotesService) {
     if (this.notesService.notas) {
       this.notes = this.notesService.notas;
     } else {

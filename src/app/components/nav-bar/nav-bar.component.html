@@ -1,10 +1,10 @@
 <!--IMPORTANTE= TEMA DE LOS % EN LA IMAGEN-->
-<header class="mb-4 border-bottom border-secondary">
+<header class="mb-4 border-bottom border-secondary ">
     <div>
-        <nav class="navbar navbar-expand-md bg-light">
+        <nav class="navbar navbar-expand-md bg-{{darkModeService.colorScheme}} front">
             <div class="container-fluid container">
-                <a class="navbar-brand">
-                    <img src="https://ucu.edu.uy/sites/all/themes/univer/images/logo_es.png" alt="Logo UCU" width="110" height="70">
+                <a class="navbar-brand" href="https://ucu.edu.uy/es">
+                    <img src="https://ucu.edu.uy/sites/all/themes/univer/images/logo_es.png" alt="Logo UCU" width="140" height="70">
                 </a>
                 <!-- Boton en modo Mobile -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
@@ -12,29 +12,11 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <div class="form-check form-check-inline">
-                                <input #btnRed class="form-check-input" type="checkbox" (click)="onlySelectedCards()">
-                                <label class="form-check-label" for="inlineCheckbox1">Rojo</label>
-                            </div>
+                        <li class="nav-item nav-link px-2 ">
+                            <a class="btn text-decoration-none" href="https://youtu.be/dQw4w9WgXcQ">Link muy interesante</a>
                         </li>
-                        <li class="nav-item">
-                            <div class="form-check form-check-inline">
-                                <input #btnGreen class="form-check-input" type="checkbox" (click)="onlySelectedCards()">
-                                <label class="form-check-label" for="inlineCheckbox2">Verde</label>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="form-check form-check-inline">
-                                <input #btnYellow class="form-check-input" type="checkbox" (click)="onlySelectedCards()">
-                                <label class="form-check-label" for="inlineCheckbox3">Amarillo</label>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="form-check form-check-inline">
-                                <input #btnSky class="form-check-input" type="checkbox" (click)="onlySelectedCards()">
-                                <label class="form-check-label" for="inlineCheckbox3">Cielo</label>
-                            </div>
+                        <li class="nav-item nav-link px-2">
+                            <a class="btn text-decoration-none" href="https://youtu.be/dQw4w9WgXcQ">Otro link muy interesante</a>
                         </li>
                     </ul>
                 </div>

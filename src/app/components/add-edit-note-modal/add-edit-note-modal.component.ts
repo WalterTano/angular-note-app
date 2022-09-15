@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { DarkModeService } from 'src/app/services/dark-mode.service';
 
 import { Ciudad } from '../../interfaces/Ciudad';
-import { Color } from '../../interfaces/Color';
 import { Note, EmptyNote } from '../../interfaces/Note';
-import { NotasService } from '../../services/notas.service';
+import { NotesService } from '../../services/notes.service';
 
 @Component({
   selector: 'app-add-edit-note-modal',
@@ -26,16 +26,14 @@ export class AddEditNoteModalComponent implements OnInit {
     { nombre: 'Tokyo', lat: '35,6785', long: '139,6823' },
     { nombre: 'New York', lat: '41,6785', long: '-139,6823' }
   ];
-  colors: Color[] = [
-    { nombre: 'Rojo', selector: 'btnRed' },
-    { nombre: 'Verde', selector: 'btnGreen' },
-    { nombre: 'Amarillo', selector: 'btnYellow' },
-    { nombre: 'Cielo', selector: 'btnSky' }
-  ];
-  // ----------------
+
+  get colorScheme(): 'primary' | 'secondary' {
+    return this.darkModeService.isDarkMode ? 'secondary' : 'primary';
+  }
 
   constructor(private activeModal: NgbActiveModal,
-              private notesService: NotasService) { }
+              private notesService: NotesService,
+              public darkModeService: DarkModeService) { }
 
   ngOnInit(): void {
     if (this.inputNote) {

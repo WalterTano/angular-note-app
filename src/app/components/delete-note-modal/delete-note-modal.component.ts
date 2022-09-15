@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { DarkModeService } from 'src/app/services/dark-mode.service';
 
-import { NotasService } from '../../services/notas.service';
+import { NotesService } from '../../services/notes.service';
 
 @Component({
   selector: 'delete-note-modal',
@@ -10,9 +11,14 @@ import { NotasService } from '../../services/notas.service';
 })
 export class DeleteNoteModalComponent implements OnInit {
 
+  get colorScheme(): '' | 'btn-secondary' {
+    return this.darkModeService.isDarkMode ? 'btn-secondary' : '';
+  }
+
   @Input() noteId?: string;
   constructor(private activeModal: NgbActiveModal,
-              private notesService: NotasService) { }
+              private notesService: NotesService,
+              public darkModeService: DarkModeService) { }
 
   ngOnInit(): void { }
 

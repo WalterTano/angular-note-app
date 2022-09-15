@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class NotasService {
+export class NotesService {
   notas?: Map<string, Note>;
 
   constructor(private servicioTemperatura: TemperatureService) {
